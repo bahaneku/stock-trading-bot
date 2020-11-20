@@ -1,0 +1,27 @@
+Project goals for today:
+
+- Ask about database
+- Ask about data to add to chart.js
+- Change design for dashboard
+
+CREATE TABLE stock_data (
+	time varchar,
+	open float,
+	high float,
+	low float,
+	close float,
+	intraday_change_$ float,
+	volume bigint,
+	close_change_$ float,
+	close_change_pct float,
+	volume_change_$ bigint,
+	volume_change_pct float,
+	five_min_avg_$ float,
+	eight_min_avg_$ float,
+	thirteen_min_avg_$ float,
+	twenty_min_avg_$ float,
+	fifty_min_avg_$ float,
+	twohundred_min_avg_$ float,
+	minute_volatility float,
+	price_change_binary int,
+	price_category int);
