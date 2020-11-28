@@ -24,13 +24,12 @@ def make_prediction(X, model, y_scaler):
     return float(predicted_actual_close[0][0])
 
 def last_prediction(data, model, y_scaler):
+    # Getting yesterday's prediction
     MinMaxScaler = preprocessing.MinMaxScaler()
     normalized_data = MinMaxScaler.fit_transform(data)
     normalized_data = normalized_data[-51:-1]
-    # Predict next day's close
-    predicted_close=model.predict(np.expand_dims(normalized_data, 0))
-    # Convert the close to real terms
-    last_predicted_close=y_scaler.inverse_transform(predicted_close)
+    last_predicted_close=model.predict(np.expand_dims(normalized_data, 0))
+    last_predicted_close=y_scaler.inverse_transform(last_predicted_close)
     return float(last_predicted_close[0][0])
 
 # Make prediction for tomorrow
@@ -39,4 +38,12 @@ prediction = make_prediction(X, model, y_scaler)
 last_prediction = last_prediction(X, model, y_scaler)
 # Get percent change predicted
 percent_change_predicted = ((prediction-last_prediction)/last_prediction) *100
-print(percent_change_predicted)
+if percent_change_predicted > .5:
+    print(f"Predicted Price Movement: {percent_change_predicted}")
+    print("Buy")
+elif percent_change_predicted > 0:
+    print(f"Predicted Price Movement: {percent_change_predicted}")
+    print("Hold")
+else:
+    print(f"Predicted Price Movement: {percent_change_predicted}")
+    print("Sell")
