@@ -23,14 +23,14 @@ def make_prediction(X, model, y_scaler):
     predicted_actual_close = y_scaler.inverse_transform(predicted_close)
     return float(predicted_actual_close[0][0])
 
-def last_prediction(data, model, y_norm):
+def last_prediction(data, model, y_scaler):
     MinMaxScaler = preprocessing.MinMaxScaler()
     normalized_data = MinMaxScaler.fit_transform(data)
     normalized_data = normalized_data[-51:-1]
     # Predict next day's close
     predicted_close=model.predict(np.expand_dims(normalized_data, 0))
     # Convert the close to real terms
-    last_predicted_close=y_norm.inverse_transform(predicted_close)
+    last_predicted_close=y_scaler.inverse_transform(predicted_close)
     return float(last_predicted_close[0][0])
 
 # Make prediction for tomorrow
