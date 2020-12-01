@@ -1,7 +1,7 @@
 from flask import Flask, render_template, jsonify
-from flask.json import dumps, loads
 import pandas as pd
-from geojson import Feature, FeatureCollection, Point
+import json
+from geojson import Feature, FeatureCollection, Point, dumps, loads
 from flask_cors import CORS, cross_origin
 
 app=Flask(__name__)
@@ -40,19 +40,6 @@ def locations():
 
     features = []
     for index, row in data.iterrows():
-        # longitude = row['Longitude']
-        # latitude = row['Latitude']
-        # symbol = row['Symbol']
-        # security = row['Security']
-        # GICS_Sector = row['GICS_Sector']
-        # GICS_Sub_Industry = row['GICS_Sub_Industry']
-        # city = row['City']
-        # state = row['State']
-        # date_added = row['Date_Added']
-        # CIK = row['CIK']
-
-        point = Point((row['Latitude'], row['Longitude']))
-        print(row['Latitude'])
         properties = {
             "Symbol": row['Symbol'],
             "Security": row['Security'],
@@ -60,18 +47,16 @@ def locations():
             "GICS_Sub_Industry": row['GICS_Sub_Industry'],
             "City": row['City'],
             "State": row['State'],
-            "Date_Added": row['Date_Added'],
             "CIK": row['CIK']
         }
-
-        features.append(Feature(geometry=point, properties=properties))
+        point = Point((row['Longitude'], row['Latitude']))
+       
+        features.append(Feature(properties=properties, geometry=point))
     feature_collection = FeatureCollection(features)
 
     dump = dumps(feature_collection)
     geojson = loads(dump)
-
     return geojson
-
 
 if __name__=="__main__":
     app.run(debug=True)

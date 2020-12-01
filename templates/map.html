@@ -7,6 +7,14 @@
         background-size: cover;
         background-repeat: no-repeat;
     }
+    .card label {
+        color: #000000;
+    }
+    .leaflet-popup-content-wrapper{
+        background:#062F4F;
+        color:white;
+    }
+
 </style>
 {% endblock %}
         <div class="sidebar">
@@ -59,33 +67,7 @@
             </div>
         </div>
     </div>
-    <div class="fixed-plugin">
-        <div class="dropdown show-dropdown">
-            <a href="#" data-toggle="dropdown">
-                <i class="fa fa-cog fa-2x"> </i>
-            </a>
-            <ul class="dropdown-menu">
-                <li class="header-title"> Color Mode</li>
-                <li class="adjustments-line">
-                    <a href="javascript:void(0)" class="switch-trigger background-color">
-                        <div class="badge-colors text-center">
-                            <span class="badge filter badge-primary active" data-color="primary"></span>
-                            <span class="badge filter badge-info" data-color="blue"></span>
-                            <span class="badge filter badge-success" data-color="green"></span>
-                        </div>
-                        <div class="clearfix"></div>
-                    </a>
-                </li>
-                <li class="adjustments-line text-center color-change">
-                    <span class="color-label">LIGHT MODE</span>
-                    <span class="badge light-badge mr-2"></span>
-                    <span class="badge dark-badge ml-2"></span>
-                    <span class="color-label">DARK MODE</span>
-                </li>
-            </ul>
-        </div>
-    </div>
-    <!-- <script>
+    <script>
         $(document).ready(function () {
             $().ready(function () {
                 $sidebar = $('.sidebar');
@@ -209,5 +191,5 @@
                 token: "ee6fab19c5a04ac1a32a645abde4613a",
                 application: "black-dashboard-free"
             });
-    </script> -->
+    </script>
 {% endblock %}
