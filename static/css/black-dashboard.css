@@ -17812,7 +17812,7 @@ table.tablesorter thead tr .headerSortDown {
   width: 100%;
   min-height: 100vh;
   border-top: 2px solid #B82601;
-  background: linear-gradient(#000000, #1e1e24);
+  background: linear-gradient(#000000, #000000);
   -webkit-transition: all 0.5s cubic-bezier(0.685, 0.0473, 0.346, 1);
   -moz-transition: all 0.5s cubic-bezier(0.685, 0.0473, 0.346, 1);
   -o-transition: all 0.5s cubic-bezier(0.685, 0.0473, 0.346, 1);
@@ -18418,7 +18418,7 @@ a[data-toggle="collapse"][aria-expanded="true"] .caret,
 }
 
 .bd-docs .bd-example {
-  background: linear-gradient(#000000, #1e1e24);
+  background: linear-gradient(#000000, #000000);
 }
 
 .bd-docs .navbar {

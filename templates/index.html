@@ -1,10 +1,19 @@
 {% extends "base.html" %}
 {% block content %}
+{% block additional_styles %}
+<style>
+    body {
+        background-image: url('/static/img/');
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+</style>
+{% endblock %}
 <div class="content" style="padding-top: 4%;">
     <div class="container-fluid">
         <!-- your content here -->
         <br></br>
-        <h1 style="vertical-align:middle; text-align:right">AI Trading?</h1>
+        <h1 style="vertical-align:middle; text-align:right">AI Trading</h1>
         <p style="text-align:right">We use predictive modeling to help you buy stock. Yes, a robot will make you rich.
         </p>
     </div>
