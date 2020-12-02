@@ -19,6 +19,7 @@ function createFeatures(locationsData) {
     createMap(locations);
 }
 
+
 function createMap(locations) {
     // Add a tile layer (the background map image) to our map
     // We use the addTo method to add objects to our map

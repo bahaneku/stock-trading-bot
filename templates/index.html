@@ -3,19 +3,30 @@
 {% block additional_styles %}
 <style>
     body {
-        background-image: url('/static/img/');
+        background-image: url('/static/img/bg-01.jpg');
         background-size: cover;
         background-repeat: no-repeat;
+        backdrop-filter: grayscale(1);
+    }
+    .jumbotron {
+        background: none;             /* Transparent background */
     }
 </style>
 {% endblock %}
-<div class="content" style="padding-top: 4%;">
-    <div class="container-fluid">
-        <!-- your content here -->
-        <br></br>
-        <h1 style="vertical-align:middle; text-align:right">AI Trading</h1>
-        <p style="text-align:right">We use predictive modeling to help you buy stock. Yes, a robot will make you rich.
-        </p>
+<div class="jumbotron jumbotron-fluid-transparent"></div>
+<div class="push"></div>
+<header class="masthead" style="backdrop-filter: blur(10px); background-color: rgba(117, 122, 255, 0.5);">
+    <div class="container h-100">
+        <div class="row h-100 align-items-center justify-content-center text-center">
+            <div class="col-lg-10 align-self-end">
+                <h1 class="text-uppercase text-white font-weight-bold" style="font-family: Roboto-Mono;">AI Trading</h1>
+                <hr class="divider my-4"/>
+            </div>
+            <div class="col-lg-8 align-self-baseline">
+                <p class="text-white-75 font-weight-bold mb-5">We use predictive modeling to help you buy stock. Yes, a robot will make you rich.</p>
+                <a class="btn btn-primary btn-xl js-scroll-trigger" href="/login">Find Out More</a>
+            </div>
+        </div>
     </div>
-</div>
+</header>
 {% endblock %}
