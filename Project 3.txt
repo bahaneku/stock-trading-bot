@@ -1,0 +1,15 @@
+Project 3:
+
+- Our goal was to create a dashboard that provided hourly, daily, and monthly summary information for an individual's portfolio, similarly to other investment apps.
+
+- Our dashboard has three main components:
+	- the main portfolio summary page
+	- a map of all the S&P 500 headquarter locations
+	- an edit profile page
+
+- Data from our ML script is fed into each chart and updates daily.  We made some buys using the Alpaca trading API to provide some current data for you all to see. Unfortunatly we lost money but it's okay because it is not real.
+
+- The map is a leaflet map that shows all of the headquarters for the S&P 500 companies. We created this map using a scrape of each company (there was a list on Wiki).  After that we put together a python script that converted the cities and states into lat/longs then converted the CSV that we produced into a geojson to pull from
+
+- The user page is an edit profile page.  Essentially just a form that an individual can use to add details about themselves.
+
