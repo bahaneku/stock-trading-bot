@@ -1,2 +1,2 @@
 # stock-trading-bot
-!Dashboard Screenshot(https://github.com/bahaneku/stock-trading-app/blob/main/dashboard.png?raw=true)
+!Dashboard Screenshot(https://github.com/bahaneku/stock-trading-app/main/dashboard.png?raw=true)
